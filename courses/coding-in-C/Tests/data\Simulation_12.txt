@@ -1,0 +1,7 @@
+
+Simulation Nb. 12:
+
+|Simulated Steps|  Parking Cells|  Max. Parking Time|  New Car Prob.|  Max. New Cars|           Seed|
+|              9|              3|                  8|         68.30%|             45|             98|
+
+|   Current Step|    Parked Cars|          Avg. Time|   Queue Length|    Full Garage| Cars Simulated|     Most Brand|

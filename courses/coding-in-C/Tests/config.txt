@@ -1,0 +1,26 @@
+
+Configured data:
+
+|Simulated Steps|  Parking Cells|  Max. Parking Time|  New Car Prob.|  Max. New Cars|           Seed|
+|              4|              5|                 68|         20.24%|             73|           4832|
+|Simulated Steps|  Parking Cells|  Max. Parking Time|  New Car Prob.|  Max. New Cars|           Seed|
+|              4|              5|                 68|         20.24%|             73|           4832|
+|Simulated Steps|  Parking Cells|  Max. Parking Time|  New Car Prob.|  Max. New Cars|           Seed|
+|              4|              5|                 68|         20.24%|             73|           4832|
+|Simulated Steps|  Parking Cells|  Max. Parking Time|  New Car Prob.|  Max. New Cars|           Seed|
+|              4|              5|                 68|         20.24%|             73|           4832|
+|Simulated Steps|  Parking Cells|  Max. Parking Time|  New Car Prob.|  Max. New Cars|           Seed|
+|              4|              5|                 68|         20.24%|             73|           4832|
+
+Configured data:
+
+|Simulated Steps|  Parking Cells|  Max. Parking Time|  New Car Prob.|  Max. New Cars|           Seed|
+|              4|              5|                 68|         20.24%|             73|           4832|
+|Simulated Steps|  Parking Cells|  Max. Parking Time|  New Car Prob.|  Max. New Cars|           Seed|
+|              4|              5|                 68|         20.24%|             73|           4832|
+|Simulated Steps|  Parking Cells|  Max. Parking Time|  New Car Prob.|  Max. New Cars|           Seed|
+|              4|              5|                 68|         20.24%|             73|           4832|
+|Simulated Steps|  Parking Cells|  Max. Parking Time|  New Car Prob.|  Max. New Cars|           Seed|
+|              4|              5|                 68|         20.24%|             73|           4832|
+|Simulated Steps|  Parking Cells|  Max. Parking Time|  New Car Prob.|  Max. New Cars|           Seed|
+|              4|              5|                 68|         20.24%|             73|           4832|
