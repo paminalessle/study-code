@@ -14,16 +14,15 @@ int main(){
 //Section III
 
 namespace _validation_ {
-    bool isAdult(std::int_least8_t age) { 
-        if (65 > age >= 18){
-            return true;
-        }
+    const std::uint8_t MIN_AGE_ADULT = 18;
+    const std::uint8_t MIN_AGE_SENIOR = 65;
+
+    bool isAdult(std::uint8_t age) { 
+        return MIN_AGE_ADULT <= age <= MIN_AGE_SENIOR;
     }
 
-    bool isSenior(std::int_least8_t age) {
-        if(age >= 65){
-            return true;
-        }
+    bool isSenior(std::uint8_t age) {
+       return age >= MIN_AGE_SENIOR;
     }
 
 }
@@ -31,15 +30,30 @@ namespace _validation_ {
 int main(){
     std::cout << "Please enter your age: " << std::endl;
 
-    //int age = 0;
+    int age = 0;
 
-    /*std::cin >> age;
+    std::cin >> age;
     if(!(std::cin >> age)){
-        std::cout << "You did not enter a valid number. Please try again.";
+        std::cout << "You did not enter a valid number. Please try again." << std::endl;
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }*/
+    }
 
-    std::cout <<"You are" << "8" << "years old" << std::endl;
+    std::cout <<"You are " << age << " years old" << std::endl;
 
+    const int valid_age = static_cast<std::uint8_t>(age);
+
+    std::cout << valid_age;
+
+    if (_validation_::isAdult(valid_age)) {
+        std::cout << "That means you are an adult." <<std::endl;
+    }
+    else if (_validation_::isSenior(valid_age)) {
+        std::cout << "That means you are a senior citizen" << std::endl;
+    }
+    else {
+        std::cout << "That means you are still a child or a teenager." << std::endl;
+    }
+    
+    return 0;
 }
