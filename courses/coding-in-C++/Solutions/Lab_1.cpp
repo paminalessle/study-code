@@ -4,15 +4,16 @@
 #include <cstdint>
 
 
-//Section I
+//Section I: Hello World!
 /*
 int main(){
     std::cout << "Hello World!" << std::endl;
 }
 */
 
-//Section III
 
+//Section III: Age validator
+/*
 namespace validation {
     const std::uint16_t ADULT_LIMIT = 18;
     const std::uint16_t SENIOR_LIMIT = 65;
@@ -50,3 +51,9 @@ int main(){
 
     return 0;
 }
+*/
+
+
+//Section IV: Student Grade Report Formatter
+
+
