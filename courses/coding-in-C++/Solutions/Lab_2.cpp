@@ -75,7 +75,7 @@ class Note {
             std::cout << "Memory released!" << std::endl;
         }
         std::string display() {
-            
+            std::cout << this->text << std::endl;
         }
 };
 
@@ -83,7 +83,7 @@ class Note {
 int main() {
     Note Mine("hello world! Bye World");
     
-    Mine.display;
+    Mine.display();
 
     return 0;
 }
