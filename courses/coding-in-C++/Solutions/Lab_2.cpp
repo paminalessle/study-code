@@ -130,21 +130,25 @@ class DrinkBuilder {
         int temperature;
         bool withMilk;
     public:
+        
         DrinkBuilder& setName(std::string name) {
             this->name = name;
             std::cout << "Drink: " << this->name <<std::endl;
             return *this;
-        };
+        }
+
         DrinkBuilder& setSugar(int sugar) {
             this->sugar = sugar;
-            std::cout << "SUgar: " << this->sugar << std::endl;
+            std::cout << "Sugar: " << this->sugar << std::endl;
             return *this;
         }
+
         DrinkBuilder& setTemperature(int temperature) {
             this ->temperature = temperature;
             std::cout << "Temperature: " <<this->temperature << std::endl;
             return *this;
         }
+
         DrinkBuilder& setWithMilk(bool withMilk) {
             this->withMilk = withMilk;
             if(this->withMilk = true) {
@@ -175,7 +179,7 @@ int main(){
 
 //Section V: Fault Analysis
 
-/*
+
 class Article { //write into seperate header file
     private:
         std::string name;
@@ -187,17 +191,16 @@ class Article { //write into seperate header file
 
     public:
         Article(std::string name, double price, int stock, std::string category, int id) : name(name), price(price)
-        , stock(stock), id(id) {
-            this->category = std::string(category);
-        }
+        , stock(stock), id(id), category(category){};
 
-        void setPrice(double price){
+        Article& setPrice(double price){
             this->price = price;
+            return *this;
         };
 
-        void sell(int amount);
+        Article& sell(int amount);
 
-        void restock(int amount);
+        Article& restock(int amount);
 
         double applyDiscount(double percent);
 
@@ -217,7 +220,7 @@ class Article { //write into seperate header file
 //
 //@param[1] amount The ammount of articles to be sold
 
-void Article::sell(int amount) {
+Article& Article::sell(int amount) {
     if(this->stock - amount < 0) {
         std::cout << "Not enough left" << std::endl;
     }
@@ -227,19 +230,21 @@ void Article::sell(int amount) {
     else {
     this->stock -= amount;
     }
+    return *this;
 }
 
 //@brief Restocks an article by the amount entered
 //
 //@param[1] amount The amount of an article to be restocked
 
-void Article::restock(int amount) {
+Article& Article::restock(int amount) {
     if(amount<0){
         std::cout << "Invalid restock amount entered." << std::endl;
     }
     else {
     this->stock += amount;   
     }
+    return *this;
 }
 
 //@brief Applies a dicount on the article
@@ -261,7 +266,6 @@ double Article::applyDiscount(double percent) {
 }
 
 //@brief Checks the availabilty of the article
-//
 
 bool Article::isAvailable() const{  
     if(stock > 0){
@@ -298,9 +302,7 @@ int main() {
 
     Article Laptop("Laptop", startingPrice, startingStock, "Electronics", exampleID);
 
-    Laptop.restock(restockvalue);
-    Laptop.sell(sold);
-    Laptop.setPrice(newprice);
+    Laptop.restock(restockvalue).sell(sold).setPrice(newprice);
     Laptop.applyDiscount(discount);
 
     if(Laptop.isAvailable() == true){
@@ -309,4 +311,3 @@ int main() {
     
     return 0;
 }
-*/
