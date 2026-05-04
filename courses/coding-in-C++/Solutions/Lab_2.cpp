@@ -196,7 +196,7 @@ class Article { //write into seperate header file
         Article& setPrice(double price){
             this->price = price;
             return *this;
-        };
+        }
 
         Article& sell(int amount);
 
@@ -204,16 +204,13 @@ class Article { //write into seperate header file
 
         double applyDiscount(double percent);
 
-       // double getPrice() const{
-       //     return this->price;
-       // }
+       double getPrice()const{
+          return this->price;
+       }
 
-        bool isAvailable() const;
+        bool isAvailable()const;
 
         void printInfo()const;
-        
-        ~Article(){}
-        //missing destructor
 };
 
 //@brief Sells a certain amount of an article
@@ -221,7 +218,7 @@ class Article { //write into seperate header file
 //@param[1] amount The ammount of articles to be sold
 
 Article& Article::sell(int amount) {
-    if(this->stock - amount < 0) {
+    if(this->stock < amount) {
         std::cout << "Not enough left" << std::endl;
     }
     else if(amount<0) {
@@ -236,9 +233,11 @@ Article& Article::sell(int amount) {
 //@brief Restocks an article by the amount entered
 //
 //@param[1] amount The amount of an article to be restocked
+//@return *this Returns the article with changed stock value
 
 Article& Article::restock(int amount) {
-    if(amount<0){
+    if(amount<0)
+    {
         std::cout << "Invalid restock amount entered." << std::endl;
     }
     else {
@@ -250,6 +249,7 @@ Article& Article::restock(int amount) {
 //@brief Applies a dicount on the article
 // 
 //@param[1] percent The discount value
+//@return finalprice Returns the finalprice with the discount 
 
 double Article::applyDiscount(double percent) {
     if(percent > 100){
@@ -259,7 +259,7 @@ double Article::applyDiscount(double percent) {
         std::cout << "Invalid discount value entered." << std::endl;
     }
     else {
-        this->finalprice = price - price * percent / 100;  //this-> price
+        this->finalprice = this->price - this->price * percent / 100;
         std::cout << "Discount applied." << std::endl;
     }
     return this->finalprice;
@@ -277,6 +277,7 @@ bool Article::isAvailable() const{
         return false;
     }
 }
+
 
 //@brief Prints the articles information to the console
 

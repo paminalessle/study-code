@@ -298,9 +298,13 @@ For each issue:
 Answer the following questions:
 
 1. Why is the use of new for the category attribute problematic in this case?
+  cause there aint no delete
 2. What could happen if multiple objects of this class are copied?
+  there aint no cpy contructor -> copies exact values into copy -> pointer shit
 3. Why should some methods be marked as const?
+  cause im not changing value
 4. What risks arise from allowing direct access to price and stock?
+  everyone can change them
 
 ### Task Part 3
 Write a corrected version of the program that solves all found issues and is in accordance with our coding convention.
