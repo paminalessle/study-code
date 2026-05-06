@@ -2,14 +2,53 @@
 #include <string.h>
 
 //Section I: Online Learning Platform
+/*class Content {
+    private: 
+        std::string type;
+    
+};
+class Lesson {
+    private:
+        std::string title;
+        Content* content;
+    public:
+        void start();
+        void end();
+
+};
+class Course{
+    private:
+        std::string title;
+        std::string description;
+        Lesson lessons[];
+    public:
+        void delete_lesson(Lesson* lesson){
+            delete  lesson;
+        }
+        void add_lesson(Lesson* lesson){
+            this->lessons += lesson;  
+        }
+
+};
+class Platform {
+    private:
+        std::string name;
+        Course courses[100];
+};
+
+
 
 class User {
     protected:
         std::string name;
         int user_id;
     private:
+        Platform* platform_reg[];
+        Courses* courses[];
         
-}
+};
+*/
+//NOT DONE YEEETTTTTTTTTTTTTT
 
 
 //Section II: Inheritance
@@ -102,4 +141,30 @@ int main(){
 
     return 0;
 }
+*/
+
+
+
+//Section III: UML Review
+
+/*
+Part 1: 
+    1. Library, Member, Book, Librarian, PrintedBook, EBook, Loan
+    2. Book, every Method, salary of the Librarian
+    3. Composition, aggregations, asscoiations
+Part 2:
+    1. - That PrintedBook and EBook inherit from Book
+       - That a Library needs books 
+       - That Members are a part of the Library but they can still exist with out each other
+       - That a Librarian inherits from a Member
+    2. - The relationships between Librarian -> Library and Member-> Loan are unclear as to who owns who
+       - The relationship between Loan and Book is incorrect. It should be an association
+    3. Not quite as in Book everything is made private. The attributes should be set to protected.
+    4. No, Book is completey public as well as the Salary of the Librarian
+Part 3:
+
+
+
+
+
 */
