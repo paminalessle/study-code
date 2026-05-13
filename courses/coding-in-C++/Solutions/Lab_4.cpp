@@ -51,3 +51,42 @@ int main() {
 
 //Section III: Bug Hunt
 
+//Section II: Static Polymorphism
+
+//Task 1
+
+class Shape{
+    public: 
+        virtual double area() const{
+            return 0.0;
+        }
+        virtual ~Shape() {};
+};
+
+class Circle: Shape{
+    private:
+        double radius;
+        const double pi = 3.14;
+    public:
+        Circle(double radius):radius(radius){};
+        double area() const override{
+            return pi*this-> radius *this->radius;
+        }
+
+};
+
+class Rectangle: Shape{
+    private:
+        double length;
+        double width;
+    public:
+        Rectangle(double length, double width): length(length), width(width){};
+        double area()const override{
+            return this->length*this->width;
+        }
+
+};
+
+int main(){
+    Circle circle = Circle(5);
+}
