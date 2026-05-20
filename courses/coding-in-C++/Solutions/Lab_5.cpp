@@ -1,5 +1,9 @@
 #include <iostream>
 
+//Section I:
+//Task 1: Emergency Payload switch
+
+/*
 template <typename T>
 class Payload{
     private:
@@ -11,7 +15,7 @@ class Payload{
 
     T swap() {
         this->temp = this->value_a;
-        this->value_a = this->value_b;
+        this->value_a = this->value_b; //refrences needed. dont know how
         this->value_b = this->temp;
         return value_b, value_a;
     }
@@ -26,6 +30,27 @@ int main(){
     p.print();
     p.swap();
     p.print();
+
+    return 0;
+}
+*/
+
+// Task 2: Sensor frame printer
+
+template <typename T, int U>
+class Drone {
+    private:
+        T sensor_frames[U];
+    public:
+        void print(){
+            std::cout << &sensor_frames[U] << std::endl;
+        };
+};
+
+int main(){
+    Drone<double,15> first;
+
+    first.print();
 
     return 0;
 }
