@@ -53,7 +53,7 @@ int main() {
 
 //Section II: Static Polymorphism
 
-//Task 1
+//Task 1, 2
 
 class Shape{
     public: 
@@ -89,4 +89,6 @@ class Rectangle: Shape{
 
 int main(){
     Circle circle = Circle(5);
+
+    
 }

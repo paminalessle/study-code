@@ -71,16 +71,17 @@ class Drone {
             return smallest;
         }
 
-        void get_smallest() const{
-            std::cout << "The smallest value is: " << this-> smallest << std::endl;
-        }
+        void get_smallest();
 
-        template <typename L, typename V, typename V2>
-        void tag_composer(L label1, V value1, L label2, V2 value2){
+        template <typename L, typename V, typename X>
+        void tag_composer(L label1, V value1, L label2, X value2){
             std::cout << label1 << ": " << value1 << " | " << label2 << ": " << value2 << std::endl;
         }
 };
-
+template <typename T, int U>
+void Drone<T,U>::get_smallest(){
+    std::cout << "The smallest value is: " << this-> smallest << std::endl;
+}
 
 int main(){
     Drone<> first;
