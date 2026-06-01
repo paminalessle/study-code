@@ -64,17 +64,16 @@ void readStudentData(std::string &name, int &homework, int &midterm, int &finalE
     std::cout << "Enter the students name: " << std::endl;
     std::getline(std::cin >> std:: ws, name);
 
-    bool b = true;
-    while(b == true) {
-        bool b = true;
+    int i = 0;
+   
+    for(int i = 0; i == 0;) {
         std::cout << "Homework grade: " << std::endl;
-        if(!(std::cin >> homework) || 100 < homework || 0 > homework){
+        if(!(std::cin >> std::ws >> homework) || 100 < homework || 0 > homework){
             std::cout << "Invalid grade input." << std::endl;
             std::cin.clear();
-            std::cin >> std::ws;
-        }
-        else {
-            b = false;
+            std::cin.ignore();
+        } else {
+            i = 1;
         }
     }
 
