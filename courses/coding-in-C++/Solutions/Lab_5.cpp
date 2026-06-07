@@ -1,95 +1,46 @@
 #include <iostream>
+#include <string.h>
+#include <stdexcept>
+#include <vector>
+#include <algorithm>
+#include "Lab_5.hpp"
 
-//Section I:
-//Task 1: Emergency Payload switch
 
-/*
-template <typename T>
-class Payload{
-    private:
-        T value_a;
-        T value_b;
-        T temp;
-    public:
-    Payload(T a, T b): value_a(a), value_b(b){};
+int main() {
+    double x = 3.7;
+    double y = 4.9;
 
-    void swap() {
-        T& ptA = value_a;
-        T& ptB = value_b;
+    std::cout << x << " " << y << std::endl;
+    swap(x, y);
+    std::cout << x << " " << y << std::endl;
 
-        T temp = ptA;
-        ptA = ptB;
-        ptB = temp;
+    double arr[] = {12, 15, 18, 21.7, 13.9, 1.6};
+
+    print_frames(arr);
+
+    return_smll(arr);
+
+    std::string label1 = "Channel";
+    std::string label2 = "Priority";
+    std::string value1 = "motor_temp";
+    int value2 = 2;
+
+    tag_comp(label1, value1, label2, value2);
+    std::vector<int> data {42, 17, 42, 5, 99, 17, 63, 12};
+    //prints the og data
+    for(int i: data) {
+        std::cout << i << ", ";
     }
-
-    void print(){
-        std::cout << this-> value_a <<"    " << this->value_b << std::endl;
+    std::cout << std::endl;
+    //sorts the data
+    std::sort(data.begin(), data.end());
+    //prints the sorted data
+    for(int i: data) {
+        std::cout << i << ", ";
     }
-};
+    std::cout << std::endl;
+    
+    std::find(data.begin(), data.end(), 63);
 
-int main(){
-    Payload p = Payload( 67, 89);
-    p.print();
-    p.swap();
-    p.print();
-
-    return 0;
-}
-*/
-
-// Task 2: Sensor frame printer
-// Task 3: Weakest Signal Detector
-// Task 4: Telemetry Tag Composer
-
-template <typename T, int U>
-class Drone {
-    private:
-
-        T smallest;
-
-    public:
-        Drone& print(T (&sensor_frames)[U]){
-            for(int i = 0; i < U; i++) {
-                std::cout << sensor_frames[i] << ", ";
-            }
-            std::cout << "End of Sensor Frames" << std::endl;
-            return *this;
-        };
-
-        Drone& set(int space, T value){
-            this-> sensor_frames[space] = value;
-            return *this;
-        }
-
-        T detect(T (&sensor_frames)[U]){
-            this-> smallest = sensor_frames[0];
-            for(int i = 1; i < smallest; i++){
-                if(sensor_frames[i] < smallest){
-                    smallest = sensor_frames[i];
-                }   
-            }
-            return smallest;
-        }
-
-        void get_smallest();
-
-        template <typename L, typename V, typename X>
-        void tag_composer(L label1, V value1, L label2, X value2){
-            std::cout << label1 << ": " << value1 << " | " << label2 << ": " << value2 << std::endl;
-        }
-};
-template <typename T, int U>
-void Drone<T,U>::get_smallest(){
-    std::cout << "The smallest value is: " << this-> smallest << std::endl;
-}
-
-int main(){
-    Drone<> first;
-    first.set(1, 98).set(7,6).set(8,5).set(4, 23);
-    int sensor_frames[4];
-    first.print(sensor_frames);
-    first.detect();
-    first.get_smallest();
-    first.tag_composer("Channel", 7, "Priority", 2);
     return 0;
 }
